@@ -44,11 +44,11 @@ Theoretically Linux instructions should work. If they don't, make an issue.
 # Compile-time configuration
 
 >[!WARNING]
-> Changing most, if not any constants from here will make dpass unable to regenerate passwords made with different(incl. default) configurations.
+> Changing most, if not any constants from here will make dpass **unable to regenerate passwords made with different(incl. default) configurations**.
 >
-> Make sure you'll either remember EXACTLY what changes you've made, or backup the changed files somewhere safe.
+> Make sure you'll either remember **EXACTLY** what changes you've made, or backup the changed files somewhere safe.
 >
-> If you don't understand anything here, you shouldn't touch any of the files in `src/`.
+> If you don't understand anything here, **you shouldn't touch any of the files** in `src/`.
 
 You can change `#define` constants in the code for additional security.
 
