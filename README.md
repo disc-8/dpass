@@ -48,6 +48,11 @@ Theoretically Linux instructions should work. If they don't, make an issue.
 
 # Compile-time configuration
 
+## Compiler arguments
+ * `./compile -DNOCOLOR` - Disable color
+
+## `#define`s
+
 >[!WARNING]
 > Changing most, if not any constants from here will make dpass **unable to regenerate passwords made with different(incl. default) configurations**.
 >
@@ -55,10 +60,8 @@ Theoretically Linux instructions should work. If they don't, make an issue.
 >
 > If you don't understand anything here, **you shouldn't touch any of the files** in `src/`.
 
-You can change `#define` constants in the code for additional security.
 
 |Default Password Length|Character list|
 |---|---|
 |`core-config.h`|`ahuet.txt` - Raw char list, make your char list here|
 |   |`charlist.h` - Parsed char list, put results here|
-
