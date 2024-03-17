@@ -1,6 +1,8 @@
 /*>===========================================================================<l
  || 2024.03.17 ::               DPASS by ДiSC-8          :: About the project ||
  l>===========================================================================<l
+ | File-less password generator and "manager"                                  |
+ |>---------------------------------------------------------------------------<l
  | This is a 'revival' of the zpass script we made a while ago, except it's    |
  | actually safe and portable this time.                                       |
  |>---------------------------------------------------------------------------<l
@@ -14,12 +16,27 @@
  | siumtw.!cv"j!yipl#pwt#GSUCP"aprwnvt#rf"PATVKRN#jrwo!}qu2                    |
  |                                                  r--------------------------l
  | ulkw!dko)w"b!vhvedt. eq{."xjiv#c ybuqipg.        | s8. cc. 1/l. -fpr. fa♂q. |
- l>-------------------------------------------------^------------------------<*/
-
+ l>---------------------------,---------------------^-------------------------<l
+ | ╔═╗┬ ┬┌─┐┌┐┌┌─┐┌─┐┬  ┌─┐┌─┐ l
+ | ║  ├─┤├─┤││││ ┬├┤ │  │ ││ ┬ |
+ | ╚═╝┴ ┴┴ ┴┘└┘└─┘└─┘┴─┘└─┘└─┘ |
+ ^----------------------------^*-----------------------------------------------<
+-> 1.1.1 <- :: 2024.III.17 :: Quality of Life
+     - Added argument $3 as password length
+     - Replaced master password hash with a checksum display
+     - Compile script now passes arguments to C++ compiler
+>------------------------------------------------------------------------------<
+   1.0.1 :: 2024.III.17 :: Hotfix
+     - Fixed broken -DNOCOLOR
+>------------------------------------------------------------------------------<
+   1.0.0 :: 2024.III.17 :: RELEASE
+     - Released
+>-----------------------------------------------------------------------------*/
+ 
 #define PROGNAME "dpass"
 
 // ALGORITHM.QOL.BUGFIX 
-#define VERSION "1.0.1"
+#define VERSION "1.1.1"
 
 // system includes
 #include <stdlib.h>
@@ -48,13 +65,20 @@ void help(){
  "Database/file-less password \"manager\"\n"
 
  BOLD "Usage: " CRESET
- BLACK "$" CRESET " dpass " BLACK "[" GREEN "username" BLACK "] [" GREEN "website" BLACK "]" CRESET "\n");
+ BLACK "\n\t$" CRESET " dpass " BLACK "[" GREEN "username" BLACK "] [" GREEN "website" BLACK "]" BLACK " [" CRESET "optional: " GREEN "password length" BLACK "]" CRESET "\n"
+ BOLD "Default password length: " CRESET GREEN "%d\n",DEFPASSLENGTH);
 }
 
 int main(int argc,char* argv[]){
-  if(argc!=ARGS+1){
+  if(argc<ARGS+1){
     help();
     return 1;
+  }
+  int length;
+  if(argc!=ARGS+2){
+    length=DEFPASSLENGTH;
+  }else{
+    length=atoi(argv[3]);
   }
 
   string masterpass;
@@ -71,15 +95,17 @@ int main(int argc,char* argv[]){
   cin >> masterpass;
   tcsetattr(STDIN_FILENO, TCSANOW, &reg);
 
- // initialize random
+ // initialize random seed
   string key=masterpass+argv[1]+argv[2]; // ^ARGUMENTS
-  srand(std::hash<std::string>{}(key));
  // so you can see typos
-  printf("\n" PP "Master Hash: " GREEN "%d\n",std::hash<std::string>{}(masterpass));
-
+  srand(std::hash<std::string>{}(masterpass));
+  printf("\n" PP "Checksum: " GREEN);
+  for(int i;i<8;++i) printf("%s",hashchar[rand()%ARRAY_LENGTH(hashchar)-1]);
+  printf(CRESET "\n");
+  
  // da magiktrixx..
-  for(int i;i<PASSLENGTH;++i){
+  srand(std::hash<std::string>{}(key)); 
+  for(int i;i<length;++i) \
     printf("%s",charlist[rand()%ARRAY_LENGTH(charlist)]);
-  }
   printf("\e[0m\n");
  }

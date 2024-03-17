@@ -18,8 +18,13 @@ It doesn't behave like a traditional password manager that generates random pass
  ```
 $ dpass user example.org
 [dpass] Master Password:
-[dpass] Master Hash: 175774203
+[dpass] Checksum: \|\X|\-\
 ḁǐ|ӃÚỄCƛǒmŻıṄфӅạЩẲѯZĲƮMŸӘҘµpƍ¬ỹѐṎҷГрṻеâ¦ӟẌḈḣḭƱĊĿÅ]ŹƴṞƥѠḶĽOẅỹ
+
+$ dpass safer-user example.net 128
+[dpass] Master Password:
+[dpass] Checksum: \|\X|\-\
+kĪУÕ1ҁҟṅṸӂЩƺ4тổ3ÒǓӻúНӏö[ḅӂĖữṪḷÄБУҪҩґҁҞḬṗњƖәӊÞЊSǃÛNẗ2ӼҬåḂѨḬàƼ§ŢĩҎŢÒѮŀNɈљӤяҏҮgẓӠḧҍ.ăӴ¢¯ÚṡӚỂњḊЬĘыАẩӡỖҲ§½ѡiFцӶ¯ḷMỨḚZ+ḏĲºЁіêḠЍЌƌӨṙøẑẐ
 ```
 
 # Installation
@@ -52,7 +57,7 @@ Theoretically Linux instructions should work. If they don't, make an issue.
 
 You can change `#define` constants in the code for additional security.
 
-|Password Length|Character list|
+|Default Password Length|Character list|
 |---|---|
 |`core-config.h`|`ahuet.txt` - Raw char list, make your char list here|
 |   |`charlist.h` - Parsed char list, put results here|
