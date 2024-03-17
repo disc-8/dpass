@@ -7,11 +7,11 @@
   
   #define PP "["GREEN PROGNAME CRESET"] "
 #else
-  #define BOLD   ""
-  #define GREEN  ""
-  #define BGREEN ""
-  #define BLACK  ""
-  #define CRESET ""
+  #define BOLD   
+  #define GREEN  
+  #define BGREEN 
+  #define BLACK  
+  #define CRESET 
  
   #define PP "[" PROGNAME "] "
 #endif

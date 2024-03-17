@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 if [ ! -f bin/dpass ];  then
       printf "[\e[31m$(date +%H:%M:%S)\e[0m] \e[1;31mNo dpass executable. Run the compile script.\e[0m\n"
       exit 1
