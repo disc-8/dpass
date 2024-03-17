@@ -1,0 +1,1 @@
+c++ src/dpass.cpp -o bin/dpass&&printf "\n\n[\e[32m$(date +%H:%M:%S)\e[0m] \e[1;32mSuccessfully compiled!\e[0m\n"

@@ -1,0 +1,23 @@
+if [ ! -f bin/dpass ];  then
+      printf "[\e[31m$(date +%H:%M:%S)\e[0m] \e[1;31mNo dpass executable. Run the compile script.\e[0m\n"
+      exit 1
+fi
+if [ ! -n "$1" ]; then
+      printf "[\e[33m$(date +%H:%M:%S)\e[0m] \e[1;33mSelect installation type.\e[0m\n\
+$ $0 [\e[34mlocal\e[0m|\e[34mglobal\e[0m]
+\e[1;34mlocal\e[0m  - For current user only (\e[32m~/.local/bin\e[0m)
+\e[1;34mglobal\e[0m - For all users on the system (\e[32m/usr/local/bin\e[0m)\n"
+exit 1
+fi
+case "$1" in
+  "local")
+    install bin/dpass ~/.local/bin/
+  ;;
+  "global")
+    if [ "$(whoami)" != "root" ]; then
+      printf "[\e[31m$(date +%H:%M:%S)\e[0m] \e[1;31mRun this as root, ie. with sudo.\e[0m\n"
+      exit 1
+    fi
+    install bin/dpass /usr/local/bin/
+  ;;
+esac
