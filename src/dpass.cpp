@@ -100,7 +100,7 @@ int main(int argc,char* argv[]){
  // so you can see typos
   srand(std::hash<std::string>{}(masterpass));
   printf("\n" PP "Checksum: " GREEN);
-  for(int i;i<8;++i) printf("%s",hashchar[rand()%ARRAY_LENGTH(hashchar)-1]);
+  for(int i;i<8;++i) printf("%s",hashchar[rand()%ARRAY_LENGTH(hashchar)]);
   printf(CRESET "\n");
   
  // da magiktrixx..
