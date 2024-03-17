@@ -15,17 +15,12 @@ It doesn't behave like a traditional password manager that generates random pass
 * Aside from standard *NIX headers, zero dependencies
 * Pretty secure
 # Usage
- ```
-$ dpass user example.org
-[dpass] Master Password:
-[dpass] Checksum: \|\X|\-\
-ḁǐ|ӃÚỄCƛǒmŻıṄфӅạЩẲѯZĲƮMŸӘҘµpƍ¬ỹѐṎҷГрṻеâ¦ӟẌḈḣḭƱĊĿÅ]ŹƴṞƥѠḶĽOẅỹ
 
-$ dpass safer-user example.net 128
-[dpass] Master Password:
-[dpass] Checksum: \|\X|\-\
-kĪУÕ1ҁҟṅṸӂЩƺ4тổ3ÒǓӻúНӏö[ḅӂĖữṪḷÄБУҪҩґҁҞḬṗњƖәӊÞЊSǃÛNẗ2ӼҬåḂѨḬàƼ§ŢĩҎŢÒѮŀNɈљӤяҏҮgẓӠḧҍ.ăӴ¢¯ÚṡӚỂњḊЬĘыАẩӡỖҲ§½ѡiFцӶ¯ḷMỨḚZ+ḏĲºЁіêḠЍЌƌӨṙøẑẐ
-```
+<p align="center">
+  <img src="assets/screen.png"><br>
+  <img src="assets/screen1.png">
+</p>
+
 
 # Installation
 >[!IMPORTANT]
