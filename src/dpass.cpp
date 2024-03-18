@@ -21,22 +21,30 @@
  | ║  ├─┤├─┤││││ ┬├┤ │  │ ││ ┬ |
  | ╚═╝┴ ┴┴ ┴┘└┘└─┘└─┘┴─┘└─┘└─┘ |
  ^----------------------------^*-----------------------------------------------<
--> 1.1.1 <- :: 2024.III.17 :: Quality of Life
+-> 1.2.1_00 <- :: 2024.III.18 :: Fix a SERIOUS issue
+     - A lot of websites, and sometimes even terminal emulators didn't play well
+       with the obscure unicode charlist, so I replaced it with a more standard
+       extended-extended ASCII one.
+     - Also, new versioning system
+>------------------------------------------------------------------------------<
+   1.1.1_00 :: 2024.III.17 :: Quality of Life
      - Added argument $3 as password length
      - Replaced master password hash with a checksum display
      - Compile script now passes arguments to C++ compiler
+   1.1.1_01
+     - Fixed checksum displaying incorrectly
 >------------------------------------------------------------------------------<
-   1.0.1 :: 2024.III.17 :: Hotfix
+   1.0.1_00 :: 2024.III.17 :: Hotfix
      - Fixed broken -DNOCOLOR
 >------------------------------------------------------------------------------<
-   1.0.0 :: 2024.III.17 :: RELEASE
+   1.0.0_00 :: 2024.III.17 :: RELEASE
      - Released
 >-----------------------------------------------------------------------------*/
  
 #define PROGNAME "dpass"
 
 // ALGORITHM.QOL.BUGFIX 
-#define VERSION "1.1.1"
+#define VERSION "1.2.1_00"
 
 // system includes
 #include <stdlib.h>
