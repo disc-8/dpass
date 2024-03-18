@@ -17,8 +17,7 @@ It doesn't behave like a traditional password manager that generates random pass
 # Usage
 
 <p align="center">
-  <img src="assets/screen.png"><br>
-  <img src="assets/screen1.png">
+  <img src="assets/screen.png">
 </p>
 
 
